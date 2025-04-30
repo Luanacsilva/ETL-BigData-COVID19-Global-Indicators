@@ -61,6 +61,7 @@ def salvar_csv(df, pais_nome):
         return
 
     caminho = f"data/tendencias_{pais_nome.replace(' ', '_')}.csv"
+    caminho = f"data/tendencias_{pais_nome.replace(' ', '_')}.csv"
     df.to_csv(caminho, index=False)
     print(f"[OK] CSV salvo com sucesso: {caminho}")
 
