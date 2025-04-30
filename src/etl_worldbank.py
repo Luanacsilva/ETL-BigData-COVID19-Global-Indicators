@@ -1,10 +1,7 @@
 import requests
 import pandas as pd
 import time
-from mongodb_connection import conectar_mongo
-
-raw_collection = conectar_mongo(db_name="covid19_project", collection_name="dados_worldbank")
-transformed_collection = conectar_mongo(db_name="covid19_project", collection_name="dados_worldbank_transformado")
+from mongodb_connection import raw_collection, transformed_collection
 
 anos_desejados = [str(ano) for ano in range(2000, 2024)]
 

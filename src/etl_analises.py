@@ -1,9 +1,5 @@
 import pandas as pd
-from mongodb_connection import conectar_mongo
-
-# Conexão com o MongoDB
-covid_collection = conectar_mongo(db_name="covid19_project", collection_name="dados_covid_historico")
-worldbank_collection = conectar_mongo(db_name="covid19_project", collection_name="dados_worldbank_transformado")
+from mongodb_connection import covid_collection,worldbank_collection
 
 
 def extrair_casos_covid():
