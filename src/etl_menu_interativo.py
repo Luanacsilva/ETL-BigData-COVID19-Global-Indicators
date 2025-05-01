@@ -1,5 +1,5 @@
 import pandas as pd
-from mongodb_connection import worldbank_collection,covid_collection
+from config import worldbank_collection,covid_collection
 
 # =============== ETL 5 - Visualização Interativa ===============
 # Versão com suporte a países com dados parciais

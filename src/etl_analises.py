@@ -1,5 +1,5 @@
 import pandas as pd
-from mongodb_connection import covid_collection,worldbank_collection
+from config import covid_collection,worldbank_collection
 
 
 def extrair_casos_covid():

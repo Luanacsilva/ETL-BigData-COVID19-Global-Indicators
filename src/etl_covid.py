@@ -1,7 +1,9 @@
 import requests
 import pandas as pd
 import time
-from db import historico_collection
+from config import conectar_mongo
+
+historico_collection = conectar_mongo("dados_covid_historico")
 
 # ======= FUNÇÕES =======
 

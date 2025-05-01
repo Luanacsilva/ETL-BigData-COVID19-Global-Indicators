@@ -1,5 +1,5 @@
 import pandas as pd
-from mongodb_connection import worldbank_collection,covid_collection
+from config import worldbank_collection,covid_collection
 
 def extrair_economico_por_ano(iso3):
     """Extrai indicadores econômicos por ano para um país (ISO3)."""
