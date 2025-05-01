@@ -1,16 +1,9 @@
-import os
 import requests
 import pandas as pd
 import time
-from pymongo import MongoClient
-from dotenv import load_dotenv
+from config import conectar_mongo
 
-# ======= CONEXÃO COM MONGO =======
-load_dotenv()
-mongo_url = os.getenv("MONGO_URL")
-client = MongoClient(mongo_url)
-db = client["covid19_project"]
-historico_collection = db.get_collection("dados_covid_historico")
+historico_collection = conectar_mongo("dados_covid_historico")
 
 # ======= FUNÇÕES =======
 

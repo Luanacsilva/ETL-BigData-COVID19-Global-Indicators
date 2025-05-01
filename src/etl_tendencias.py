@@ -1,5 +1,5 @@
 import pandas as pd
-from mongodb_connection import worldbank_collection,covid_collection
+from config import worldbank_collection,covid_collection
 
 def extrair_economico_por_ano(iso3):
     """Extrai indicadores econômicos por ano para um país (ISO3)."""
@@ -60,6 +60,7 @@ def salvar_csv(df, pais_nome):
         print(f"[ERRO] Nenhum dado a salvar para {pais_nome}.")
         return
 
+    caminho = f"data/tendencias_{pais_nome.replace(' ', '_')}.csv"
     caminho = f"data/tendencias_{pais_nome.replace(' ', '_')}.csv"
     df.to_csv(caminho, index=False)
     print(f"[OK] CSV salvo com sucesso: {caminho}")

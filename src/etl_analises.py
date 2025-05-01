@@ -1,5 +1,5 @@
 import pandas as pd
-from mongodb_connection import covid_collection,worldbank_collection
+from config import covid_collection,worldbank_collection
 
 
 def extrair_casos_covid():
@@ -61,7 +61,7 @@ def cruzar_covid_e_indicadores(df_covid, df_indicadores):
     return df_final
 
 
-def salvar_csv(df_final, caminho="../data/analise_impacto_covid_socioeconomico.csv"):
+def salvar_csv(df_final, caminho="data/analise_impacto_covid_socioeconomico.csv"):
     """Salva o DataFrame final em CSV (formatado para Excel/Power BI)."""
     colunas = [
         "pais_nome", "cases",

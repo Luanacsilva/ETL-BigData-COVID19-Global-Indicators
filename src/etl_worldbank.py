@@ -1,7 +1,7 @@
 import requests
 import pandas as pd
 import time
-from mongodb_connection import raw_collection, transformed_collection
+from config import raw_collection, transformed_collection
 
 anos_desejados = [str(ano) for ano in range(2000, 2024)]
 
