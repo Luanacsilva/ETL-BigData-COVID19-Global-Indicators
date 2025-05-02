@@ -1,14 +1,8 @@
 import pandas as pd
-from mongodb_connection import conectar_mongo
+from config import worldbank_collection,covid_collection
 
 # =============== ETL 5 - Visualização Interativa ===============
 # Versão com suporte a países com dados parciais
-
-# =============== CONEXÃO MONGO ===============
-worldbank_collection = conectar_mongo(db_name="covid19_project", collection_name="dados_worldbank_transformado")
-covid_collection = conectar_mongo(db_name="covid19_project", collection_name="dados_covid_historico")
-
-# =============== FUNÇÕES ===============
 
 def listar_paises_disponiveis():
     """Lista os países presentes no banco."""
@@ -84,7 +78,8 @@ def montar_dataset(pais_nome, iso3):
 
 def salvar_dataset(df, pais_nome):
     """Salva CSV com dados do país."""
-    caminho = f"../data/tendencias_interativo_{pais_nome.replace(' ', '_')}.csv"
+    caminho = f"data/tendencias_interativo_{pais_nome.replace(' ', '_')}.csv"
+    caminho = f"data/tendencias_interativo_{pais_nome.replace(' ', '_')}.csv"
     df.to_csv(caminho, index=False)
     print(f"[💾] CSV salvo: {caminho}\n")
 
