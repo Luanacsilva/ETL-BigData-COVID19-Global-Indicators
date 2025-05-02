@@ -66,9 +66,12 @@ def salvar_csv(df, pais_nome):
     print(f"[OK] CSV salvo com sucesso: {caminho}")
 
 
-if __name__ == "__main__":
+def etl_tendencias():
+    """Executa o pipeline completo para um país específico."""
     pais_nome = "Brazil"
     pais_iso3 = "BRA"
+    df = montar_temporal(pais_nome, pais_iso3)
+    salvar_csv(df, pais_nome)
 
-    df_temporal = montar_temporal(pais_nome, pais_iso3)
-    salvar_csv(df_temporal, pais_nome)
+if __name__ == "__main__":
+    etl_tendencias()
