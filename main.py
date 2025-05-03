@@ -1,12 +1,12 @@
 import sys
 import os
+
+sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+
 from src.etl_analises import etl_analises
 from src.etl_covid import etl_covid_global
 from src.etl_worldbank import etl_worldbank
 from src.etl_tendencias import etl_tendencias, montar_temporal, salvar_csv
-
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
-
 
 def menu():
     while True:

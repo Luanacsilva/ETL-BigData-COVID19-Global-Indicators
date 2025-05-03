@@ -44,6 +44,8 @@ def extrair_indicadores_socioeconomicos():
 
 def cruzar_covid_e_indicadores(df_covid, df_indicadores):
     """Combina dados de COVID e indicadores socioeconômicos por país_nome."""
+
+    df_indicadores = df_indicadores[df_indicadores["pais_nome"].notna()]
     df_indicadores = df_indicadores.pivot(index="pais_nome", columns="indicador_nome", values="valor").reset_index()
 
     df_indicadores.rename(columns={
